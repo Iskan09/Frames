@@ -4,7 +4,7 @@ from PIL import Image
 import io
 
 # Инициализация бота
-TOKEN = '6553315261:AAGxCUTqGfce74Lsq1omWDTvhq2fCWLeqLM'
+TOKEN = ''
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
