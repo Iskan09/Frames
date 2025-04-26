@@ -48,8 +48,9 @@ def handle_photo(message):
         for i in range(1, 5):
             keyboard.add(InlineKeyboardButton(f"Рамка №{i}", callback_data=f"frame_{i}"))
         
-        # Отправляем сообщение с кнопками
-        bot.reply_to(message, "Выберите рамку:", reply_markup=keyboard)
+        with open('frames/main.jpg', 'rb') as photo:
+            bot.send_photo(message.chat.id, photo, caption="Выберите рамку:", reply_markup=keyboard)
+        
 
     except Exception as e:
         bot.reply_to(message, f"Произошла ошибка при обработке фото: {str(e)}")
